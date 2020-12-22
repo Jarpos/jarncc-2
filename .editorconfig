@@ -1,16 +1,20 @@
-# Editor configuration, see https://editorconfig.org
+# Info about .editorconfig:
+# https://editorconfig.org/ or for the exact specs:
+# https://editorconfig-specification.readthedocs.io/
 root = true
 
 [*]
-charset = utf-8
+indent_size = 4
 indent_style = space
-indent_size = 2
-insert_final_newline = true
 trim_trailing_whitespace = true
-
-[*.ts]
-quote_type = single
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
 
 [*.md]
-max_line_length = off
 trim_trailing_whitespace = false
+
+{makefile,package-lock.json}
+insert_final_newline = false
+indent_size = unset
+indent_style = tab
