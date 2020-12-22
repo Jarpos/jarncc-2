@@ -4,12 +4,12 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CCharEditorComponent } from './c-char-editor/c-char-editor.component';
+import { CCharEditorComponent } from './pages/c-char-editor/c-char-editor.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        CCharEditorComponent
+        CCharEditorComponent,
     ],
     imports: [
         BrowserModule,
