@@ -2,6 +2,7 @@ export class BaseValue_c {
     /**
      * @param n name
      * @param v value
+     * @param e explanation
      */
     constructor(n: string = "", v: number = 0, e: string = "") {
         this.name = n;
