@@ -17,4 +17,8 @@ export class CCharEditorComponent implements OnInit {
 
     ngOnInit(): void { }
 
+    public log() {
+        console.log(this.characterService._characters[0]);
+    }
+
 }
