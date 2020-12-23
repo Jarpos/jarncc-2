@@ -1,31 +1,46 @@
-<table *ngFor="let character of characterService._characters">
+<div *ngFor="let character of characterService._characters">
     <!-- General Information (Name, Age, etc.) -->
-    <tr *ngFor="let info of character._information | keyvalue">
-        <td id="{{ info.key }}">{{ info.value.name }}:&nbsp;</td>
-        <td id="{{ info.key }}">{{ info.value.value }}</td>
-        <td title="{{ info.value.explanation }}">?</td>
-    </tr>
+    <table>
+        <tr *ngFor="let info of character._information | keyvalue">
+            <td title="{{ info.value.explanation }}">
+                {{ info.value.name }}:
+            </td>
+            <td id="{{ info.key }}">{{ info.value.value }}</td>
+        </tr>
+    </table>
     <br>
 
     <!-- Base Values (Strength, Dexterity, etc.) -->
-    <tr *ngFor="let base of character._baseValues | keyvalue">
-        <td>{{ base.value.name }}:&nbsp;</td>
-        <td>{{ base.value.value }}</td>
-        <td title="{{ base.value.explanation }}">?</td>
-    </tr>
+    <table>
+        <tr *ngFor="let base of character._baseValues | keyvalue">
+            <td title="{{ base.value.explanation }}">
+                {{ base.value.name }}:
+            </td>
+            <td>{{ base.value.value }}</td>
+            <td>
+                <button (click)="base.value.value = base.value.value + 1">+</button>
+                <button (click)="base.value.value = base.value.value - 1">-</button>
+            </td>
+        </tr>
+    </table>
     <br>
 
     <!-- Talents (Perception, Pickpocketing, etc.) -->
-    <tr *ngFor="let talent of character._talents | keyvalue">
-        <td>{{ talent.value.name }}:&nbsp;</td>
-        <td>{{ talent.value.basePoints }}</td>
-        <td>{{ talent.value.extraPoints }}</td>
-        <td>{{ talent.value.difficulty }}</td>
-        <td *ngFor="let attr of talent.value.attributes">
-            {{ attr }}&nbsp;
-        </td>
-        <td title="{{ talent.value.explanation }}">?</td>
-    </tr>
+    <table>
+        <tr *ngFor="let talent of character._talents | keyvalue">
+            <td title="{{ talent.value.explanation }}">
+                {{ talent.value.name }}:
+            </td>
+            <td><input matInput type="number"
+                        [(ngModel)]="talent.value.extraPoints"
+                        min="0" max="20"></td>
+            <td>{{ talent.value.basePoints }}</td>
+            <td>{{ talent.value.difficulty }}</td>
+            <td *ngFor="let attr of talent.value.attributes">
+                {{ attr }}&nbsp;
+            </td>
+        </tr>
+    </table>
     <br>
-    <br>
-</table>
+</div>
+<button (click)="log()">Print Char</button>
