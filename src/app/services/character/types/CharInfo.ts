@@ -1,15 +1,13 @@
-export class CharInfo_c {
+export class CharInfo_c<T> {
     /**
      * @param n name
-     * @param a age
-     * @param o origin
-     * @param p profession
+     * @param v value
+     * @param e explanation
      */
-    constructor(n: string = "", a: number = 0, o: string = "", p: string = "") {
+    constructor(n: string, v: T, e: string = "") {
         this.name = n;
-        this.age = a;
-        this.origin = o;
-        this.profession = p;
+        this._value = v;
+        this.explanation = e;
     }
 
     private _name: string = "";
@@ -20,27 +18,27 @@ export class CharInfo_c {
         }
     }
 
-    private _age: number = 0;
-    public get age(): number { return this._age; }
-    public set age(a: number) {
-        if (a >= 0) {
-            this._age = a;
-        }
+    private _value: T;
+    public get value(): T { return this._value; }
+    public set value(v: T) {
+        this._value = v;
     }
 
-    private _origin: string = "";
-    public get origin(): string { return this._origin; }
-    public set origin(o: string) {
-        if (o.length <= 256) {
-            this._origin = o;
+    private _explanation: string = "";
+    public get explanation(): string { return this._explanation; }
+    public set explanation(e: string) {
+        if (e.length <= 512) {
+            this._explanation = e;
         }
     }
+}
 
-    private _profession: string = "";
-    public get profession(): string { return this._profession; }
-    public set profession(p: string) {
-        if (p.length <= 256) {
-            this._profession = p;
-        }
-    }
+
+export function get_char_infos(): Map<string, CharInfo_c<string | number>> {
+    return new Map<string, any>([
+        ["name",       new CharInfo_c<string>("Name",        "")],
+        ["age",        new CharInfo_c<number>("Alter",       0)],
+        ["origin",     new CharInfo_c<string>("Herkunft",    "")],
+        ["profession", new CharInfo_c<string>("Profession",  "")],
+    ]);
 }
