@@ -12,8 +12,6 @@ export class CharacterService {
 
     public _characters: Character_c[] = [
         new Character_c(),
-        new Character_c(),
-        new Character_c(),
     ];
 
     constructor() { }
