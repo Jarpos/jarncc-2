@@ -3,14 +3,29 @@
     <tr *ngFor="let info of character._information | keyvalue">
         <td id="{{ info.key }}">{{ info.value.name }}:&nbsp;</td>
         <td id="{{ info.key }}">{{ info.value.value }}</td>
-        <td id="{{ info.key }}">{{ info.value.explanation }}</td>
+        <td title="{{ info.value.explanation }}">?</td>
     </tr>
+    <br>
 
     <!-- Base Values (Strength, Dexterity, etc.) -->
     <tr *ngFor="let base of character._baseValues | keyvalue">
-        <td id="{{ base.key }}">{{ base.value.name }}:&nbsp;</td>
-        <td id="{{ base.key }}">{{ base.value.value }}</td>
-        <td id="{{ base.key }}">{{ base.value.explanation }}</td>
+        <td>{{ base.value.name }}:&nbsp;</td>
+        <td>{{ base.value.value }}</td>
+        <td title="{{ base.value.explanation }}">?</td>
     </tr>
+    <br>
+
+    <!-- Talents (Perception, Pickpocketing, etc.) -->
+    <tr *ngFor="let talent of character._talents | keyvalue">
+        <td>{{ talent.value.name }}:&nbsp;</td>
+        <td>{{ talent.value.basePoints }}</td>
+        <td>{{ talent.value.extraPoints }}</td>
+        <td>{{ talent.value.difficulty }}</td>
+        <td *ngFor="let attr of talent.value.attributes">
+            {{ attr }}&nbsp;
+        </td>
+        <td title="{{ talent.value.explanation }}">?</td>
+    </tr>
+    <br>
     <br>
 </table>
