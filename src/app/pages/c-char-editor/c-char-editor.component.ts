@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CharacterService } from 'src/app/services/character/character.service';
+
 @Component({
     selector: 'app-c-char-editor',
     templateUrl: './c-char-editor.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CCharEditorComponent implements OnInit {
 
-    constructor() { }
+    public characterService: CharacterService;
 
-    ngOnInit(): void {
+    constructor() {
+        this.characterService = new CharacterService();
     }
+
+    ngOnInit(): void { }
 
 }

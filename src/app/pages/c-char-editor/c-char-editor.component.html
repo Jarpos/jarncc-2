@@ -1,1 +1,16 @@
-<p>c-char-editor works!</p>
+<table *ngFor="let character of characterService._characters">
+    <!-- General Information (Name, Age, etc.) -->
+    <tr *ngFor="let info of character._information | keyvalue">
+        <td id="{{ info.key }}">{{ info.value.name }}:&nbsp;</td>
+        <td id="{{ info.key }}">{{ info.value.value }}</td>
+        <td id="{{ info.key }}">{{ info.value.explanation }}</td>
+    </tr>
+
+    <!-- Base Values (Strength, Dexterity, etc.) -->
+    <tr *ngFor="let base of character._baseValues | keyvalue">
+        <td id="{{ base.key }}">{{ base.value.name }}:&nbsp;</td>
+        <td id="{{ base.key }}">{{ base.value.value }}</td>
+        <td id="{{ base.key }}">{{ base.value.explanation }}</td>
+    </tr>
+    <br>
+</table>
