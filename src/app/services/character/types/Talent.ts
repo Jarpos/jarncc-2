@@ -7,13 +7,15 @@ export class Talent_c {
      * @param a attributes
      * @param b basepoints value
      * @param e extrapoints value
+     * @param expl explanation string
      */
-    constructor(n: string = "", d: difficulties = 1, a: string[] = ["", "", ""], b: number = 0, e: number = 0) {
+    constructor(n: string = "", d: difficulties = 1, a: string[] = ["", "", ""], b: number = 0, e: number = 0, expl: string = "") {
         this.name = n;
         this._difficulty = d;
         this.attributes = a;
         this._basePoints = b;
         this.extraPoints = e;
+        this.explanation = expl;
     }
 
     private _name: string = "";
@@ -25,7 +27,10 @@ export class Talent_c {
     }
 
     private _difficulty: difficulties = 1;
-    public get difficulty(): difficulties { return this._difficulty; }
+    public get difficulty(): string {
+        // 65 is A, so we use +64 to force at least a 65
+        return String.fromCharCode(this._difficulty + 64);
+    }
     //public set difficulty(d: difficulties) {
     //    if (d > 0 && d < 4) {
     //        this._difficulty = d;
@@ -59,13 +64,21 @@ export class Talent_c {
             this._extraPoints = e;
         }
     }
+
+    private _explanation: string = "";
+    public get explanation(): string { return this._explanation; }
+    public set explanation(e: string) {
+        if (e.length <= 512) {
+            this._explanation = e;
+        }
+    }
 }
 
 
 export function get_talents(): Map<string, Talent_c> {
     return new Map([
-        ["Talent1", new Talent_c("Talent1", 1, ["WE", "KR", "IN"], 5, 4)],
-        ["Talent2", new Talent_c("Talent2", 2, ["WE", "KR", "IN"], 0, 13)],
+        ["Talent1", new Talent_c("Talent1", 1, ["WE", "KR", "IN"], 5, 4, "Erklärung die alles erklärt")],
+        ["Talent2", new Talent_c("Talent2", 4, ["WE", "KR", "IN"], 0, 13, "Erklärung die alles erklärt")],
     ]);
 }
 
