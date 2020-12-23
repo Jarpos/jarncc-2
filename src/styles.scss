@@ -2,7 +2,13 @@
  * and also import other style files
  */
 
+html,
+body {
+    height: 100%;
+}
+
 * {
+    margin: 0;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
 }
