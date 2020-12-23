@@ -40,6 +40,10 @@ export class Talent_c {
         }
     }
 
+    private _trained: boolean = false;
+    public get trained(): boolean { return this._trained; }
+    public set trained(b: boolean) { this._trained = b; }
+
     private _basePoints: number = 0;
     public get basePoints(): number { return this._basePoints; }
     //public set basePoints(e: number) {
