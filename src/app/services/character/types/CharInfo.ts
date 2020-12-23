@@ -36,9 +36,9 @@ export class CharInfo_c<T> {
 
 export function get_char_infos(): Map<string, CharInfo_c<string | number>> {
     return new Map<string, any>([
-        ["name",       new CharInfo_c<string>("Name",        "")],
-        ["age",        new CharInfo_c<number>("Alter",       0)],
-        ["origin",     new CharInfo_c<string>("Herkunft",    "")],
-        ["profession", new CharInfo_c<string>("Profession",  "")],
+        ["name",       new CharInfo_c<string>("Name",        "", "Name des Charakters")],
+        ["age",        new CharInfo_c<number>("Alter",       0,  "Alter des Charakters")],
+        ["origin",     new CharInfo_c<string>("Herkunft",    "", "Eigentlicher gewöhnlicher Wohnort")],
+        ["profession", new CharInfo_c<string>("Profession",  "", "Profession bzw. Beruf")],
     ]);
 }
