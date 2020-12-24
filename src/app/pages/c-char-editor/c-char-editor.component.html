@@ -33,7 +33,10 @@
     </tr>
     <tr *ngFor="let b of character._baseValues | keyvalue">
         <td title="{{ b.value.explanation }}">{{ b.value.name }}:</td>
-        <td>{{ b.value.value }}</td>
+        <td [ngStyle]="{color:
+            b.value.value <= character.maxBasePoints ? '' : 'red' }">
+            {{ b.value.value }}
+        </td>
         <td>
             <button (click)="b.value.value = b.value.value - 1">-</button>
             <button (click)="b.value.value = b.value.value + 1">+</button>
@@ -66,7 +69,10 @@
             <button (click)="t.value.extraPoints = t.value.extraPoints - 1">-</button>
             <button (click)="t.value.extraPoints = t.value.extraPoints + 1">+</button>
         </td>
-        <td>Ges: {{ t.value.allPoints }}</td>
+        <td [ngStyle]="{color:
+            t.value.allPoints <= character.maxBasePoints ? '' : 'red' }">
+            Ges: {{ t.value.allPoints }}
+        </td>
         <td>Kosten: {{ t.value.cost }}</td>
     </tr>
 </table>
