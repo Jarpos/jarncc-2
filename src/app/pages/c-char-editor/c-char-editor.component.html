@@ -1,51 +1,51 @@
-    <!-- General Information (Name, Age, etc.) -->
-    <table>
-        <tr *ngFor="let i of character._information | keyvalue">
-            <td title="{{ i.value.explanation }}">{{ i.value.name }}:</td>
-            <td><input [(ngModel)]="i.value.value"></td>
-        </tr>
-    </table>
-    <br>
+<!-- General Information (Name, Age, etc.) -->
+<table>
+    <tr *ngFor="let i of character._information | keyvalue">
+        <td title="{{ i.value.explanation }}">{{ i.value.name }}:</td>
+        <td><input [(ngModel)]="i.value.value"></td>
+    </tr>
+</table>
+<br>
 
-    <!-- Base Values (Strength, Dexterity, etc.) -->
-    <table>
-        <tr>
-            <td>Basis Punkte:</td>
-            <td [ngStyle]="{color:
-                character.basePointsSum <= character.maxBasePoints ? 'green' : 'red' }">
-                {{ character.basePointsSum }}/{{ character.maxBasePoints }}
-            </td>
-        </tr>
-        <tr *ngFor="let b of character._baseValues | keyvalue">
-            <td title="{{ b.value.explanation }}">{{ b.value.name }}:</td>
-            <td>{{ b.value.value }}</td>
-            <td>
-                <button (click)="b.value.value = b.value.value + 1">+</button>
-                <button (click)="b.value.value = b.value.value - 1">-</button>
-            </td>
-        </tr>
-    </table>
-    <br>
+<!-- Base Values (Strength, Dexterity, etc.) -->
+<table>
+    <tr>
+        <td>Basis Punkte:</td>
+        <td [ngStyle]="{color:
+            character.basePointsSum <= character.maxBasePoints ? 'green' : 'red' }">
+            {{ character.basePointsSum }}/{{ character.maxBasePoints }}
+        </td>
+    </tr>
+    <tr *ngFor="let b of character._baseValues | keyvalue">
+        <td title="{{ b.value.explanation }}">{{ b.value.name }}:</td>
+        <td>{{ b.value.value }}</td>
+        <td>
+            <button (click)="b.value.value = b.value.value + 1">+</button>
+            <button (click)="b.value.value = b.value.value - 1">-</button>
+        </td>
+    </tr>
+</table>
+<br>
 
-    <!-- Talents (Perception, Pickpocketing, etc.) -->
-    <table>
-        <tr *ngFor="let t of character._talents | keyvalue">
-            <td title="{{ t.value.explanation }}">{{ t.value.name }}:</td>
-            <td>
-                <a *ngFor="let attr of t.value.attributes">
-                    {{ attr }}
-                </a>
-            </td>
-            <td>{{ t.value.basePoints }}</td>
-            <td>{{ t.value.difficulty }}</td>
-            <td>{{ t.value.extraPoints }}</td>
-            <td>
-                <button (click)="t.value.extraPoints = t.value.extraPoints + 1">+</button>
-                <button (click)="t.value.extraPoints = t.value.extraPoints - 1">-</button>
-            </td>
-            <td>Ges: {{ t.value.allPoints }}</td>
-            <td>Kosten: {{ t.value.cost }}</td>
-        </tr>
-    </table>
-    <br>
+<!-- Talents (Perception, Pickpocketing, etc.) -->
+<table>
+    <tr *ngFor="let t of character._talents | keyvalue">
+        <td title="{{ t.value.explanation }}">{{ t.value.name }}:</td>
+        <td>
+            <a *ngFor="let attr of t.value.attributes">
+                {{ attr }}
+            </a>
+        </td>
+        <td>{{ t.value.basePoints }}</td>
+        <td>{{ t.value.difficulty }}</td>
+        <td>{{ t.value.extraPoints }}</td>
+        <td>
+            <button (click)="t.value.extraPoints = t.value.extraPoints + 1">+</button>
+            <button (click)="t.value.extraPoints = t.value.extraPoints - 1">-</button>
+        </td>
+        <td>Ges: {{ t.value.allPoints }}</td>
+        <td>Kosten: {{ t.value.cost }}</td>
+    </tr>
+</table>
+<br>
 <button (click)="log()">Print Char</button>
