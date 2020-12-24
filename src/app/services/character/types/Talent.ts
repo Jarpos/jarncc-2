@@ -31,11 +31,6 @@ export class Talent_c {
         // 65 is A, so we use +64 to force at least a 65
         return String.fromCharCode(this._difficulty + 64);
     }
-    //public set difficulty(d: difficulties) {
-    //    if (d > 0 && d < 4) {
-    //        this._difficulty = d;
-    //    }
-    //}
 
     private _attributes: string[] = ["", "", ""];
     public get attributes(): string[] { return this._attributes; }
@@ -51,11 +46,6 @@ export class Talent_c {
 
     private _basePoints: number = 0;
     public get basePoints(): number { return this._basePoints; }
-    //public set basePoints(e: number) {
-    //    if (e > 0 && e <= 20) {
-    //        this._basePoints = e;
-    //    }
-    //}
 
     private _extraPoints: number = 0;
     public get extraPoints(): number { return this._extraPoints; }
