@@ -65,6 +65,13 @@ export class Talent_c {
         }
     }
 
+    public get cost(): number {
+        return this._extraPoints * this._difficulty;
+    }
+    public get allPoints(): number {
+        return this._extraPoints + this.basePoints;
+    }
+
     private _explanation: string = "";
     public get explanation(): string { return this._explanation; }
     public set explanation(e: string) {
