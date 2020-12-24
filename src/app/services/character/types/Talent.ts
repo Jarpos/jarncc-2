@@ -50,7 +50,7 @@ export class Talent_c {
     private _extraPoints: number = 0;
     public get extraPoints(): number { return this._extraPoints; }
     public set extraPoints(e: number) {
-        if (e > 0 && e <= 20 - this.basePoints) {
+        if (e >= 0 && e <= 20 - this.basePoints) {
             this._extraPoints = e;
         }
     }
