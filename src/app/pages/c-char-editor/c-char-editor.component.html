@@ -26,8 +26,8 @@
     <tr>
         <td>Basis Punkte:</td>
         <td [ngStyle]="{color:
-            character.basePointsSum <= character.maxBasePoints ? 'green' : 'red' }">
-            {{ character.basePointsSum }}/{{ character.maxBasePoints }}
+            character.basePointsSum <= character.basePoints ? 'green' : 'red' }">
+            {{ character.basePointsSum }}/{{ character.basePoints }}
         </td>
     </tr>
     <tr *ngFor="let b of character._baseValues | keyvalue">
@@ -46,8 +46,8 @@
     <tr>
         <td>Ausgleichspunkte:</td>
         <td [ngStyle]="{color:
-            character.talentPointsCostSum <= character.maxTalentPoints ? 'green' : 'red' }">
-            {{ character.talentPointsCostSum }}/{{ character.maxTalentPoints }}
+            character.talentPointsCostSum <= character.talentPoints ? 'green' : 'red' }">
+            {{ character.talentPointsCostSum }}/{{ character.talentPoints }}
         </td>
     </tr>
     <tr *ngFor="let t of character._talents | keyvalue">

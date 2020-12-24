@@ -23,6 +23,9 @@ export class Character_c {
     }
 
     public _proficency: Proficency_c = new Proficency_c("", 0, 0, 0, 0);
+    public get basePoints(): number { return this._proficency.BasePoints; }
     public get maxBasePoints(): number { return this._proficency.MaxBasePoints; }
+
+    public get talentPoints(): number { return this._proficency.TalentPoints; }
     public get maxTalentPoints(): number { return this._proficency.MaxTalentPoints; }
 }

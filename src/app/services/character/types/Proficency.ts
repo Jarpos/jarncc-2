@@ -1,25 +1,25 @@
 export class Proficency_c {
     /**
      * @param lab html label/name of proficency level
-     * @param sbp sum of all available base points
+     * @param bp sum of all available base points
      * @param mbp max amount of points that can be put into one basevalue
-     * @param stp sum of all available talent points
+     * @param tp sum of all available talent points
      * @param mtp max amount of points that can be put into one talent
      */
-    constructor(lab: string, sbp: number, mbp: number, stp: number, mtp: number) {
+    constructor(lab: string, bp: number, mbp: number, tp: number, mtp: number) {
         this.label = lab;
-        this.SumBasePoints = sbp;
+        this.BasePoints = bp;
         this.MaxBasePoints = mbp;
-        this.SumTalentPoints = stp;
+        this.TalentPoints = tp;
         this.MaxTalentPoints = mtp;
     }
 
     public label: string;
 
-    public SumBasePoints: number;
+    public BasePoints: number;
     public MaxBasePoints: number;
 
-    public SumTalentPoints: number;
+    public TalentPoints: number;
     public MaxTalentPoints: number;
 }
 
