@@ -10,9 +10,7 @@ import { Character_c } from './types/Character';
 })
 export class CharacterService {
 
-    public _characters: Character_c[] = [
-        new Character_c(),
-    ];
+    public _character: Character_c = new Character_c();
 
     constructor() { }
 

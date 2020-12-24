@@ -10,15 +10,17 @@ import { CharacterService } from 'src/app/services/character/character.service';
 export class CCharEditorComponent implements OnInit {
 
     public characterService: CharacterService;
+    public character;
 
     constructor() {
         this.characterService = new CharacterService();
+        this.character = this.characterService._character
     }
 
     ngOnInit(): void { }
 
     public log() {
-        console.log(this.characterService._characters[0]);
+        console.log(this.characterService._character);
     }
 
 }

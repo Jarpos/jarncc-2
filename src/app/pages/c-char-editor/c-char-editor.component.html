@@ -1,17 +1,21 @@
-<div *ngFor="let character of characterService._characters">
     <!-- General Information (Name, Age, etc.) -->
     <table>
         <tr *ngFor="let i of character._information | keyvalue">
             <td title="{{ i.value.explanation }}">{{ i.value.name }}:</td>
-            <td>
-                <input [(ngModel)]="i.value.value">
-            </td>
+            <td><input [(ngModel)]="i.value.value"></td>
         </tr>
     </table>
     <br>
 
     <!-- Base Values (Strength, Dexterity, etc.) -->
     <table>
+        <tr>
+            <td>Basis Punkte:</td>
+            <td [ngStyle]="{color:
+                character.basePointsSum <= character.maxBasePoints ? 'green' : 'red' }">
+                {{ character.basePointsSum }}/{{ character.maxBasePoints }}
+            </td>
+        </tr>
         <tr *ngFor="let b of character._baseValues | keyvalue">
             <td title="{{ b.value.explanation }}">{{ b.value.name }}:</td>
             <td>{{ b.value.value }}</td>
@@ -44,5 +48,4 @@
         </tr>
     </table>
     <br>
-</div>
 <button (click)="log()">Print Char</button>
