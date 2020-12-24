@@ -1,6 +1,7 @@
 import { CharInfo_c, get_char_infos } from "./CharInfo";
 import { BaseValue_c, get_base_values } from "./BaseValue";
 import { Talent_c, get_talents } from "./Talent";
+import { get_proficencies, Proficency_c } from "./Proficency";
 
 export class Character_c {
     constructor() { }
@@ -21,11 +22,7 @@ export class Character_c {
         return s;
     }
 
-    private _maxBasePoints: number = 5;
-    public set maxBasePoints(n: number) { this._maxBasePoints = n; }
-    public get maxBasePoints(): number { return this._maxBasePoints; }
-
-    private _maxTalentPoints: number = 10;
-    public set maxTalentPoints(n: number) { this._maxTalentPoints = n; }
-    public get maxTalentPoints(): number { return this._maxTalentPoints; }
+    public _proficency: Proficency_c = new Proficency_c("", 0, 0, 0, 0);
+    public get maxBasePoints(): number { return this._proficency.MaxBasePoints; }
+    public get maxTalentPoints(): number { return this._proficency.MaxTalentPoints; }
 }

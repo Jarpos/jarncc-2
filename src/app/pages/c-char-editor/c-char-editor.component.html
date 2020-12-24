@@ -1,3 +1,17 @@
+<!-- Choose proficency -->
+<table>
+    <tr>
+        <td>Erfahrungsgrad:</td>
+        <td>
+            <select [(ngModel)]="character._proficency">
+                <option *ngFor="let p of characterService._proficencies"
+                        [ngValue]="p">{{ p.label }}
+                </option>
+            </select>
+        </td>
+    </tr>
+</table>
+
 <!-- General Information (Name, Age, etc.) -->
 <table>
     <tr *ngFor="let i of character._information | keyvalue">
