@@ -28,14 +28,15 @@
         <td [ngStyle]="{color:
             character.basePointsSum <= character.basePoints ? 'green' : 'red' }">
             {{ character.basePointsSum }}/{{ character.basePoints }}
+            ({{ character.maxBasePoints }})
         </td>
     </tr>
     <tr *ngFor="let b of character._baseValues | keyvalue">
         <td title="{{ b.value.explanation }}">{{ b.value.name }}:</td>
         <td>{{ b.value.value }}</td>
         <td>
-            <button (click)="b.value.value = b.value.value + 1">+</button>
             <button (click)="b.value.value = b.value.value - 1">-</button>
+            <button (click)="b.value.value = b.value.value + 1">+</button>
         </td>
     </tr>
 </table>
@@ -48,6 +49,7 @@
         <td [ngStyle]="{color:
             character.talentPointsCostSum <= character.talentPoints ? 'green' : 'red' }">
             {{ character.talentPointsCostSum }}/{{ character.talentPoints }}
+            ({{ character.maxTalentPoints }})
         </td>
     </tr>
     <tr *ngFor="let t of character._talents | keyvalue">
@@ -61,8 +63,8 @@
         <td>{{ t.value.difficulty }}</td>
         <td>{{ t.value.extraPoints }}</td>
         <td>
-            <button (click)="t.value.extraPoints = t.value.extraPoints + 1">+</button>
             <button (click)="t.value.extraPoints = t.value.extraPoints - 1">-</button>
+            <button (click)="t.value.extraPoints = t.value.extraPoints + 1">+</button>
         </td>
         <td>Ges: {{ t.value.allPoints }}</td>
         <td>Kosten: {{ t.value.cost }}</td>
