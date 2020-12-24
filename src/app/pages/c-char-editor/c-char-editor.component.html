@@ -1,25 +1,21 @@
 <div *ngFor="let character of characterService._characters">
     <!-- General Information (Name, Age, etc.) -->
     <table>
-        <tr *ngFor="let info of character._information | keyvalue">
-            <td title="{{ info.value.explanation }}">
-                {{ info.value.name }}:
-            </td>
-            <td id="{{ info.key }}">{{ info.value.value }}</td>
+        <tr *ngFor="let i of character._information | keyvalue">
+            <td title="{{ i.value.explanation }}">{{ i.value.name }}:</td>
+            <td>{{ i.value.value }}</td>
         </tr>
     </table>
     <br>
 
     <!-- Base Values (Strength, Dexterity, etc.) -->
     <table>
-        <tr *ngFor="let base of character._baseValues | keyvalue">
-            <td title="{{ base.value.explanation }}">
-                {{ base.value.name }}:
-            </td>
-            <td>{{ base.value.value }}</td>
+        <tr *ngFor="let b of character._baseValues | keyvalue">
+            <td title="{{ b.value.explanation }}">{{ b.value.name }}:</td>
+            <td>{{ b.value.value }}</td>
             <td>
-                <button (click)="base.value.value = base.value.value + 1">+</button>
-                <button (click)="base.value.value = base.value.value - 1">-</button>
+                <button (click)="b.value.value = b.value.value + 1">+</button>
+                <button (click)="b.value.value = b.value.value - 1">-</button>
             </td>
         </tr>
     </table>
@@ -27,18 +23,22 @@
 
     <!-- Talents (Perception, Pickpocketing, etc.) -->
     <table>
-        <tr *ngFor="let talent of character._talents | keyvalue">
-            <td title="{{ talent.value.explanation }}">
-                {{ talent.value.name }}:
+        <tr *ngFor="let t of character._talents | keyvalue">
+            <td title="{{ t.value.explanation }}">{{ t.value.name }}:</td>
+            <td>
+                <a *ngFor="let attr of t.value.attributes">
+                    {{ attr }}
+                </a>
             </td>
-            <td><input matInput type="number"
-                        [(ngModel)]="talent.value.extraPoints"
-                        min="0" max="20"></td>
-            <td>{{ talent.value.basePoints }}</td>
-            <td>{{ talent.value.difficulty }}</td>
-            <td *ngFor="let attr of talent.value.attributes">
-                {{ attr }}&nbsp;
+            <td>{{ t.value.basePoints }}</td>
+            <td>{{ t.value.difficulty }}</td>
+            <td>{{ t.value.extraPoints }}</td>
+            <td>
+                <button (click)="t.value.extraPoints = t.value.extraPoints + 1">+</button>
+                <button (click)="t.value.extraPoints = t.value.extraPoints - 1">-</button>
             </td>
+            <td>Ges: {{ t.value.basePoints + t.value.extraPoints }}</td>
+            <td>Kosten: {{ t.value.extraPoints * (t.value.difficulty.charCodeAt(0) - 64) }}</td>
         </tr>
     </table>
     <br>
