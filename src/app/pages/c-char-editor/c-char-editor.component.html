@@ -29,6 +29,13 @@
 
 <!-- Talents (Perception, Pickpocketing, etc.) -->
 <table>
+    <tr>
+        <td>Ausgleichspunkte:</td>
+        <td [ngStyle]="{color:
+            character.talentPointsCostSum <= character.maxTalentPoints ? 'green' : 'red' }">
+            {{ character.talentPointsCostSum }}/{{ character.maxTalentPoints }}
+        </td>
+    </tr>
     <tr *ngFor="let t of character._talents | keyvalue">
         <td title="{{ t.value.explanation }}">{{ t.value.name }}:</td>
         <td>
