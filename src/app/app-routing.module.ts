@@ -5,6 +5,7 @@ import { CCharEditorComponent } from './pages/c-char-editor/c-char-editor.compon
 
 const routes: Routes = [
     { path: "editor", component: CCharEditorComponent },
+    { path: "", component: CCharEditorComponent },
 ];
 
 @NgModule({
