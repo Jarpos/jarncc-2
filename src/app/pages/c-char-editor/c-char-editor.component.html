@@ -3,7 +3,9 @@
     <table>
         <tr *ngFor="let i of character._information | keyvalue">
             <td title="{{ i.value.explanation }}">{{ i.value.name }}:</td>
-            <td>{{ i.value.value }}</td>
+            <td>
+                <input [(ngModel)]="i.value.value">
+            </td>
         </tr>
     </table>
     <br>
