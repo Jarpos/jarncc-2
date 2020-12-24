@@ -37,8 +37,8 @@
                 <button (click)="t.value.extraPoints = t.value.extraPoints + 1">+</button>
                 <button (click)="t.value.extraPoints = t.value.extraPoints - 1">-</button>
             </td>
-            <td>Ges: {{ t.value.basePoints + t.value.extraPoints }}</td>
-            <td>Kosten: {{ t.value.extraPoints * (t.value.difficulty.charCodeAt(0) - 64) }}</td>
+            <td>Ges: {{ t.value.allPoints }}</td>
+            <td>Kosten: {{ t.value.cost }}</td>
         </tr>
     </table>
     <br>
