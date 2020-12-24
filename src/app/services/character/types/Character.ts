@@ -15,7 +15,17 @@ export class Character_c {
         return s;
     }
 
+    public get talentPointsCostSum(): number {
+        let s = 0;
+        this._talents.forEach(val => s += val.cost)
+        return s;
+    }
+
     private _maxBasePoints: number = 5;
     public set maxBasePoints(n: number) { this._maxBasePoints = n; }
     public get maxBasePoints(): number { return this._maxBasePoints; }
+
+    private _maxTalentPoints: number = 10;
+    public set maxTalentPoints(n: number) { this._maxTalentPoints = n; }
+    public get maxTalentPoints(): number { return this._maxTalentPoints; }
 }
