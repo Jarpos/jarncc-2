@@ -81,7 +81,3 @@ export function get_talents(): Talent_c[] {
         new Talent_c("Talent5", 4, ["KR", "TA", "TA"], 0, 0, "Informationen"),
     ];
 }
-
-export function get_talents_arr(): Talent_c[] {
-    return Array.from(get_talents().values());
-}
