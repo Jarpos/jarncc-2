@@ -72,13 +72,14 @@ export class Talent_c {
 }
 
 
-export function get_talents(): Map<string, Talent_c> {
-    return new Map([
-        ["Talent1", new Talent_c("Talent1", 1, ["WE", "KR", "IN"], 5, 0, "Erklärung die alles erklärt")],
-        ["Talent2", new Talent_c("Talent2", 2, ["WE", "KR", "IN"], 5, 0, "Erklärung die alles erklärt")],
-        ["Talent3", new Talent_c("Talent3", 3, ["WE", "KR", "IN"], 0, 0, "Erklärung die alles erklärt")],
-        ["Talent4", new Talent_c("Talent4", 4, ["WE", "KR", "IN"], 0, 0, "Erklärung die alles erklärt")],
-    ]);
+export function get_talents(): Talent_c[] {
+    return [
+        new Talent_c("Talent1", 1, ["WE", "KR", "IN"], 5, 0, "Erklärung die alles erklärt"),
+        new Talent_c("Talent2", 2, ["WE", "KR", "IN"], 5, 0, "Erklärung die alles erklärt"),
+        new Talent_c("Talent3", 3, ["WE", "KR", "IN"], 0, 0, "Erklärung die alles erklärt"),
+        new Talent_c("Talent4", 4, ["WE", "KR", "IN"], 0, 0, "Erklärung die alles erklärt"),
+        new Talent_c("Talent5", 4, ["KR", "TA", "TA"], 0, 0, "Informationen"),
+    ];
 }
 
 export function get_talents_arr(): Talent_c[] {

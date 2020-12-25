@@ -6,9 +6,9 @@ import { get_proficencies, Proficency_c } from "./Proficency";
 export class Character_c {
     constructor() { }
 
-    public _information: Map<string, CharInfo_c<number | string>> = get_char_infos();
-    public _baseValues: Map<string, BaseValue_c> = get_base_values();
-    public _talents: Map<string, Talent_c> = get_talents();
+    public _information: CharInfo_c<number | string>[] = get_char_infos();
+    public _baseValues: BaseValue_c[] = get_base_values();
+    public _talents: Talent_c[] = get_talents();
 
     public get basePointsSum(): number {
         let s = 0;

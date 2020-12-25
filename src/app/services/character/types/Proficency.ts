@@ -23,8 +23,8 @@ export class Proficency_c {
     public MaxTalentPoints: number;
 }
 
-export function get_proficencies(): Array<Proficency_c> {
-    return new Array(
+export function get_proficencies(): Proficency_c[] {
+    return [
         new Proficency_c("Kümmerlich",       65,   9, 100,  9),
         new Proficency_c("Unerfahren",       75,  11, 155, 11),
         new Proficency_c("Durchschnittlich", 80,  13, 170, 13),
@@ -32,5 +32,5 @@ export function get_proficencies(): Array<Proficency_c> {
         new Proficency_c("Kompetent",        90,  15, 240, 15),
         new Proficency_c("Meisterlich",      95,  17, 300, 17),
         new Proficency_c("Brillant",        110,  19, 350, 20),
-    );
+    ];
 }

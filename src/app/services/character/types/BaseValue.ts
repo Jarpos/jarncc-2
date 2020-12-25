@@ -35,16 +35,29 @@ export class BaseValue_c {
     }
 }
 
+export function get_base_values(): BaseValue_c[] {
+    return [
+        new BaseValue_c("Kraft",            0, "Die Stärke des Charakters"),
+        new BaseValue_c("Gesundheit",       0, "Die Körperliche Gesundheit"),
+        new BaseValue_c("Flinkheit",        0, "Wie Agil der Charakter ist"),
+        new BaseValue_c("Fingerfertigkeit", 0, "Geschicklichkeit des Charakters"),
+        new BaseValue_c("Charisma",         0, "Wie gut mit Worten der Charakter ist"),
+        new BaseValue_c("Intellekt",        0, "Die Grundintelligenz des Charakters"),
+        new BaseValue_c("Weisheit",         0, "Angeignetes Wissen des Charakters"),
+        new BaseValue_c("Tapferkeit",       0, "Wie Tapfer der Charakter ist"),
+    ];
+}
 
-export function get_base_values(): Map<string, BaseValue_c> {
+// This is quite dumb, I really should find a better way to do this...
+export function get_base_values_index(): Map<string, number> {
     return new Map([
-        ["KR", new BaseValue_c("Kraft",            0, "Die Stärke des Charakters")],
-        ["GE", new BaseValue_c("Gesundheit",       0, "Die Körperliche Gesundheit")],
-        ["FL", new BaseValue_c("Flinkheit",        0, "Wie Agil der Charakter ist")],
-        ["FI", new BaseValue_c("Fingerfertigkeit", 0, "Geschicklichkeit des Charakters")],
-        ["CH", new BaseValue_c("Charisma",         0, "Wie gut mit Worten der Charakter ist")],
-        ["IN", new BaseValue_c("Intellekt",        0, "Die Grundintelligenz des Charakters")],
-        ["WE", new BaseValue_c("Weisheit",         0, "Angeignetes Wissen des Charakters")],
-        ["TA", new BaseValue_c("Tapferkeit",       0, "Wie Tapfer der Charakter ist")],
+        ["KR", 0],
+        ["GE", 1],
+        ["FL", 2],
+        ["FI", 3],
+        ["CH", 4],
+        ["IN", 5],
+        ["WE", 6],
+        ["TA", 7],
     ]);
 }
