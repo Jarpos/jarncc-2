@@ -1,7 +1,7 @@
 import { CharInfo_c, get_char_infos } from "./CharInfo";
 import { BaseValue_c, get_base_values } from "./BaseValue";
 import { Talent_c, get_talents } from "./Talent";
-import { get_proficencies, Proficency_c } from "./Proficency";
+import { Proficency_c } from "./Proficency";
 
 export class Character_c {
     constructor() { }
