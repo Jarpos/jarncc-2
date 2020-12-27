@@ -30,14 +30,25 @@ export class Character_c {
     public get maxTalentPoints(): number { return this._proficency.MaxTalentPoints; }
 
 
+    /**
+     * Return value is __always__ floored
+     * @param TA Tapferkeit
+     * @param FL Flinkheit
+     * @param FF Fingerfertigkeit
+     * @param IN Intuition
+     * @param GH Gesundheit
+     * @param KR Kraft
+     */
     private calculate_from_base(TA: number, FL: number, FF: number, IN: number, GH: number, KR: number): number {
         var map = get_base_values_index();
-        return TA * this._baseValues[map.get("TA")!].value +
-               FL * this._baseValues[map.get("FL")!].value +
-               FF * this._baseValues[map.get("FF")!].value +
-               IN * this._baseValues[map.get("IN")!].value +
-               GH * this._baseValues[map.get("GH")!].value +
-               KR * this._baseValues[map.get("KR")!].value;
+        return Math.floor(
+                TA * this._baseValues[map.get("TA")!].value +
+                FL * this._baseValues[map.get("FL")!].value +
+                FF * this._baseValues[map.get("FF")!].value +
+                IN * this._baseValues[map.get("IN")!].value +
+                GH * this._baseValues[map.get("GH")!].value +
+                KR * this._baseValues[map.get("KR")!].value
+            );
     }
 
     public get health(): number {
