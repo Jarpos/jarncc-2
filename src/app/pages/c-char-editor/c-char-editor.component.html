@@ -10,7 +10,18 @@
             </select>
         </td>
     </tr>
+    <tr>
+        <td>Herkunft:</td>
+        <td>
+            <select [(ngModel)]="character._origin">
+                <option *ngFor="let o of characterService._origins"
+                        [ngValue]="o">{{ o.label }}
+                </option>
+            </select>
+        </td>
+    </tr>
 </table>
+<br>
 
 <!-- General Information (Name, Age, etc.) -->
 <table>
