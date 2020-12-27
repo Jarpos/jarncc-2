@@ -63,6 +63,16 @@ export class Character_c {
         return this.calculate_from_base(1.0, 1.0, 0.5, 0.0, 0.0, 0.0);
     }
 
+    public get initiative_level(): number {
+        var ini = this.initiative;
+        if (ini <= 10) return 6;
+        if (ini <= 19) return 5;
+        if (ini <= 25) return 4;
+        if (ini <= 34) return 3;
+        if (ini <= 42) return 2;
+        /*(ini <= 50)*/return 1;
+    }
+
     public get dodge(): number {
         return this.calculate_from_base(0.5, 1.5, 1.0, 1.0, 0.5, 0.5);
     }
