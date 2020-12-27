@@ -1,6 +1,5 @@
 export class Origin_c {
     /**
-     *
      * @param l label
      * @param exHP extra hit points
      */
@@ -12,6 +11,7 @@ export class Origin_c {
     public label: string;
     public extraHitPoints: number;
 }
+
 
 export function get_origins(): Origin_c[] {
     return [

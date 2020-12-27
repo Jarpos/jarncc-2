@@ -23,6 +23,7 @@ export class Proficency_c {
     public MaxTalentPoints: number;
 }
 
+
 export function get_proficencies(): Proficency_c[] {
     return [
         new Proficency_c("Kümmerlich",       65,   9, 100,  9),

@@ -35,6 +35,7 @@ export class BaseValue_c {
     }
 }
 
+
 export function get_base_values(): BaseValue_c[] {
     return [
         new BaseValue_c("Kraft",            0, "Die Stärke des Charakters"),
