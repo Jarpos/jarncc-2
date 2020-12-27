@@ -2,6 +2,7 @@ import { CharInfo_c, get_char_infos } from "./CharInfo";
 import { BaseValue_c, get_base_values, get_base_values_index } from "./BaseValue";
 import { Talent_c, get_talents } from "./Talent";
 import { Proficency_c } from "./Proficency";
+import { Origin_c } from "./Origins";
 
 export class Character_c {
     constructor() { }
@@ -30,6 +31,8 @@ export class Character_c {
     public get maxTalentPoints(): number { return this._proficency.MaxTalentPoints; }
 
 
+    public _origin: Origin_c = new Origin_c("", 0);
+
     /**
      * Return value is __always__ floored
      * @param TA Tapferkeit
@@ -52,8 +55,8 @@ export class Character_c {
     }
 
     public get health(): number {
-        // NOTE: Origin of Character is not taken into account
-        return this.calculate_from_base(0.0, 1.0, 0.0, 0.0, 2.0, 1.0);
+        return this.calculate_from_base(0.0, 1.0, 0.0, 0.0, 2.0, 1.0) +
+               this._origin.extraHitPoints;
     }
 
     public get initiative(): number {
