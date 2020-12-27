@@ -34,11 +34,32 @@
 
 <!-- Calculated  -->
 <table>
-    <td></td><td>Base</td><td>Cap</td>
-    <tr><td>Trefferpunkte:</td><td>{{ character.health }}</td></tr>
-    <tr><td>Initiative:</td><td>{{ character.initiative }}</td></tr>
-    <tr><td>Ausweichen:</td><td>{{ character.dodge }}</td><td>{{ character.dodge_cap }}</td></tr>
-    <tr><td>Parieren:</td><td>{{ character.parry }}</td><td>{{ character.parry_cap }}</td></tr>
+    <tr>
+        <td>Trefferpunkte:</td>
+        <td>{{ character.health }}</td>
+    </tr>
+    <tr>
+        <td>Initiative:</td>
+        <td>{{ character.initiative }}</td>
+        <td>{{ character.initiative_level }}</td>
+    </tr>
+</table>
+<br>
+
+<!-- Fighting/Weapon talents -->
+<table>
+    <td>Name</td><td>Base</td><td>Cap</td>
+    <tr>
+        <td>Ausweichen:</td>
+        <td>{{ character.dodge }}</td>
+        <td>{{ character.dodge_cap }}</td>
+    </tr>
+    <tr>
+        <td>Parieren:</td>
+        <td>{{ character.parry }}</td>
+        <td>{{ character.parry_cap }}</td>
+    </tr>
+    <!-- TODO: Add Weapon Talents -->
 </table>
 <br>
 
