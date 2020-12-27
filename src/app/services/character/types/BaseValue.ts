@@ -52,9 +52,9 @@ export function get_base_values(): BaseValue_c[] {
 export function get_base_values_index(): Map<string, number> {
     return new Map([
         ["KR", 0],
-        ["GE", 1],
+        ["GH", 1], ["GE", 1], // Second one, in case I'm dumb
         ["FL", 2],
-        ["FI", 3],
+        ["FF", 3], ["FI", 3], // Second one, in case I'm dumb
         ["CH", 4],
         ["IN", 5],
         ["WE", 6],
