@@ -42,7 +42,7 @@ export class Character_c {
      * @param GH Gesundheit
      * @param KR Kraft
      */
-    private calculate_from_base(TA: number, FL: number, FF: number, IN: number, GH: number, KR: number): number {
+    private calc_from_base(TA: number, FL: number, FF: number, IN: number, GH: number, KR: number): number {
         var map = get_base_values_index();
         return Math.floor(
                 TA * this._baseValues[map.get("TA")!].value +
@@ -55,12 +55,12 @@ export class Character_c {
     }
 
     public get health(): number {
-        return this.calculate_from_base(0.0, 1.0, 0.0, 0.0, 2.0, 1.0) +
+        return this.calc_from_base(0.0, 1.0, 0.0, 0.0, 2.0, 1.0) +
                this._origin.extraHitPoints;
     }
 
     public get initiative(): number {
-        return this.calculate_from_base(1.0, 1.0, 0.5, 0.0, 0.0, 0.0);
+        return this.calc_from_base(1.0, 1.0, 0.5, 0.0, 0.0, 0.0);
     }
 
     public get initiative_level(): number {
@@ -84,10 +84,10 @@ export class Character_c {
         }
     }
     public get dodgeBase(): number {
-        return this.calculate_from_base(0.5, 1.5, 1.0, 1.0, 0.5, 0.5);
+        return this.calc_from_base(0.5, 1.5, 1.0, 1.0, 0.5, 0.5);
     }
     public get dodgeCap(): number {
-        return this.calculate_from_base(1.0, 2.0, 1.5, 1.5, 1.0, 1.0);
+        return this.calc_from_base(1.0, 2.0, 1.5, 1.5, 1.0, 1.0);
     }
 
     private _extraParry: number = 0;
@@ -100,9 +100,9 @@ export class Character_c {
         }
     }
     public get parryBase(): number {
-        return this.calculate_from_base(1.5, 1.0, 0.5, 0.5, 0.5, 1.0);
+        return this.calc_from_base(1.5, 1.0, 0.5, 0.5, 0.5, 1.0);
     }
     public get parryCap(): number {
-        return this.calculate_from_base(2.0, 1.5, 1.0, 1.0, 1.0, 1.5);
+        return this.calc_from_base(2.0, 1.5, 1.0, 1.0, 1.0, 1.5);
     }
 }
