@@ -1,4 +1,4 @@
-type difficulties = 1 | 2 | 3 | 4;
+export type difficulties = 1 | 2 | 3 | 4;
 
 export class Talent_c {
     /**
@@ -18,13 +18,8 @@ export class Talent_c {
         this.explanation = expl;
     }
 
-    private _name: string = "";
-    public get name(): string { return this._name; }
-    public set name(n: string) {
-        if (n.length <= 256) {
-            this._name = n;
-        }
-    }
+    public name: string = "";
+    public explanation: string = "";
 
     private _difficulty: difficulties = 1;
     public get difficulty(): string {
@@ -60,14 +55,6 @@ export class Talent_c {
     }
     public get allPoints(): number {
         return this._extraPoints + this.basePoints;
-    }
-
-    private _explanation: string = "";
-    public get explanation(): string { return this._explanation; }
-    public set explanation(e: string) {
-        if (e.length <= 512) {
-            this._explanation = e;
-        }
     }
 }
 
