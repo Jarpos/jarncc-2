@@ -73,19 +73,36 @@ export class Character_c {
         /*(ini <= 50)*/return 1;
     }
 
-    public get dodge(): number {
+
+    private _extraDodge: number = 0;
+    public get dodge(): number { return this.dodgeBase + this.extraDodge; }
+    public get costDodge(): number { return this._extraDodge * 2; }
+    public get extraDodge(): number { return this._extraDodge; }
+    public set extraDodge(n: number) {
+        if (n >= 0 && this.dodgeBase + n <= this.dodgeCap) {
+            this._extraDodge = n;
+        }
+    }
+    public get dodgeBase(): number {
         return this.calculate_from_base(0.5, 1.5, 1.0, 1.0, 0.5, 0.5);
     }
-
-    public get dodge_cap(): number {
+    public get dodgeCap(): number {
         return this.calculate_from_base(1.0, 2.0, 1.5, 1.5, 1.0, 1.0);
     }
 
-    public get parry(): number {
+    private _extraParry: number = 0;
+    public get parry(): number { return this.parryBase + this.extraParry; }
+    public get costParry(): number { return this._extraParry * 2; }
+    public get extraParry(): number { return this._extraParry; }
+    public set extraParry(n: number) {
+        if (n >= 0 && this.parryBase + n <= this.parryCap) {
+            this._extraParry = n;
+        }
+    }
+    public get parryBase(): number {
         return this.calculate_from_base(1.5, 1.0, 0.5, 0.5, 0.5, 1.0);
     }
-
-    public get parry_cap(): number {
+    public get parryCap(): number {
         return this.calculate_from_base(2.0, 1.5, 1.0, 1.0, 1.0, 1.5);
     }
 }

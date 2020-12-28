@@ -48,16 +48,30 @@
 
 <!-- Fighting/Weapon talents -->
 <table>
-    <td>Name</td><td>Base</td><td>Cap</td>
+    <td>Name</td><td>Base</td><td>Cap</td><td>Xtra</td>
     <tr>
         <td>Ausweichen:</td>
-        <td>{{ character.dodge }}</td>
-        <td>{{ character.dodge_cap }}</td>
+        <td>{{ character.dodgeBase }}</td>
+        <td>{{ character.dodgeCap }}</td>
+        <td>{{ character.extraDodge }}</td>
+        <td>
+            <button (click)="character.extraDodge = character.extraDodge - 1">-</button>
+            <button (click)="character.extraDodge = character.extraDodge + 1">+</button>
+        </td>
+        <td>= {{ character.dodge }}</td>
+        <td>Kosten: {{ character.costDodge }}</td>
     </tr>
     <tr>
         <td>Parieren:</td>
-        <td>{{ character.parry }}</td>
-        <td>{{ character.parry_cap }}</td>
+        <td>{{ character.parryBase }}</td>
+        <td>{{ character.parryCap }}</td>
+        <td>{{ character.extraParry }}</td>
+        <td>
+            <button (click)="character.extraParry = character.extraParry - 1">-</button>
+            <button (click)="character.extraParry = character.extraParry + 1">+</button>
+        </td>
+        <td>= {{ character.parry }}</td>
+        <td>Kosten: {{ character.costParry }}</td>
     </tr>
     <!-- TODO: Add Weapon Talents -->
 </table>
