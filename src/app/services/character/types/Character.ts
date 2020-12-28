@@ -18,7 +18,7 @@ export class Character_c {
     }
 
     public get talentPointsCostSum(): number {
-        let s = 0;
+        let s = this.costDodge + this.costParry;
         this._talents.forEach(val => s += val.cost);
         return s;
     }
