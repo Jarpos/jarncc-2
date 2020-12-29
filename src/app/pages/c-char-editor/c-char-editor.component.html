@@ -46,25 +46,6 @@
 </table>
 <br>
 
-<!-- Fighting/Weapon talents -->
-<table>
-    <td>Name</td><td>Base</td><td>Cap</td><td>Xtra</td>
-    <tr *ngFor="let t of character._calcTalents">
-        <td title="{{ t.explanation }}">{{ t.name }}:</td>
-        <td>{{ t.basePoints }}</td>
-        <td>{{ t.capPoints }}</td>
-        <td>{{ t.extraPoints }}</td>
-        <td>
-            <button (click)="decrement(t, 'extraPoints', $event)">-</button>
-            <button (click)="increment(t, 'extraPoints', $event)">+</button>
-        </td>
-        <td>= {{ t.allPoints }}</td>
-        <td>Kosten: {{ t.cost }}</td>
-    </tr>
-    <!-- TODO: Add Weapon Talents -->
-</table>
-<br>
-
 <!-- Base Values (Strength, Dexterity, etc.) -->
 <table>
     <tr>
@@ -85,6 +66,24 @@
             <button (click)="decrement(b, 'value', $event)">-</button>
             <button (click)="increment(b, 'value', $event)">+</button>
         </td>
+    </tr>
+</table>
+<br>
+
+<!-- Fighting/Weapon talents -->
+<table>
+    <td>Name</td><td>Base</td><td>Cap</td><td>Xtra</td>
+    <tr *ngFor="let t of character._calcTalents">
+        <td title="{{ t.explanation }}">{{ t.name }}:</td>
+        <td>{{ t.basePoints }}</td>
+        <td>{{ t.capPoints }}</td>
+        <td>{{ t.extraPoints }}</td>
+        <td>
+            <button (click)="decrement(t, 'extraPoints', $event)">-</button>
+            <button (click)="increment(t, 'extraPoints', $event)">+</button>
+        </td>
+        <td>= {{ t.allPoints }}</td>
+        <td>Kosten: {{ t.cost }}</td>
     </tr>
 </table>
 <br>
