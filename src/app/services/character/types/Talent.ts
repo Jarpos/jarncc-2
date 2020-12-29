@@ -6,10 +6,10 @@ export class Talent_c {
      * @param d difficulty
      * @param a attributes
      * @param b basepoints value
-     * @param e extrapoints value
      * @param expl explanation string
+     * @param e extrapoints value
      */
-    constructor(n: string = "", d: difficulties = 1, a: string[] = ["", "", ""], b: number = 0, e: number = 0, expl: string = "") {
+    constructor(n: string = "", d: difficulties = 1, a: string[] = ["", "", ""], b: number = 0, expl: string = "", e: number = 0) {
         this.name = n;
         this._difficulty = d;
         this.attributes = a;
@@ -61,10 +61,75 @@ export class Talent_c {
 
 export function get_talents(): Talent_c[] {
     return [
-        new Talent_c("Talent1", 1, ["WE", "KR", "IN"], 5, 0, "Erklärung die alles erklärt"),
-        new Talent_c("Talent2", 2, ["WE", "KR", "IN"], 5, 0, "Erklärung die alles erklärt"),
-        new Talent_c("Talent3", 3, ["WE", "KR", "IN"], 0, 0, "Erklärung die alles erklärt"),
-        new Talent_c("Talent4", 4, ["WE", "KR", "IN"], 0, 0, "Erklärung die alles erklärt"),
-        new Talent_c("Talent5", 4, ["KR", "TA", "TA"], 0, 0, "Informationen"),
+        /* Social */
+        new Talent_c("Wahrnemung"      , 3, ["IN", "IN", "WE"], 5, "Erklärung"),
+        new Talent_c("Überzeugen"      , 3, ["CH", "CH", "IN"], 5, "Erklärung"),
+        new Talent_c("Betören"         , 2, ["CH", "CH", "IN"], 0, "Erklärung"),
+        new Talent_c("Einschüchtern"   , 2, ["CH", "CH", "GH"], 5, "Erklärung"),
+        new Talent_c("Etikette"        , 2, ["CH", "WE", "IN"], 0, "Erklärung"),
+        new Talent_c("Menschenkenntnis", 3, ["IN", "IN", "CH"], 0, "Erklärung"),
+        new Talent_c("Verkleiden"      , 1, ["FL", "IN", "FI"], 5, "Erklärung"),
+        new Talent_c("Ertragen"        , 4, ["KR", "GH", "GH"], 0, "Erklärung"),
+
+        /* Handcraft */
+        new Talent_c("Seefahrt"          , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Fahrwerk"          , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Handel"            , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Holzarbeit"        , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Steinarbeit"       , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Lebensmittelarbeit", 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Lederarbeit"       , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Malerei"           , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Metallarbeit"      , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Waffenarbeit"      , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+        new Talent_c("Stoffarbeit"       , 3, ["KR", "FF", "WE"], 0, "Erklärung"),
+
+        /* Game */
+        new Talent_c("Weitsprung"       , 3, ["GH", "FL", "FL"], 0, "Erklärung"),
+        new Talent_c("Glücksspiel"      , 1, ["IN", "FF", "FF"], 5, "Erklärung"),
+        new Talent_c("Akrobatik"        , 3, ["FL", "FL", "GH"], 0, "Erklärung"),
+        new Talent_c("Klettern"         , 2, ["FL", "GH", "GH"], 5, "Erklärung"),
+        new Talent_c("Schwimmen"        , 2, ["FL", "GH", "GH"], 5, "Erklärung"),
+        new Talent_c("Laufen"           , 2, ["FL", "FL", "GH"], 5, "Erklärung"),
+        new Talent_c("Kraftakt"         , 3, ["KR", "KR", "KR"], 5, "Erklärung"),
+        new Talent_c("Selbstbeherschung", 3, ["GH", "TA", "TA"], 0, "Erklärung"),
+        new Talent_c("Singen"           , 3, ["FL", "TA", "FL"], 0, "Erklärung"),
+        new Talent_c("Tanzen"           , 3, ["FL", "FL", "GH"], 5, "Erklärung"),
+        new Talent_c("Täuschen"         , 3, ["FL", "FL", "FF"], 0, "Erklärung"),
+        new Talent_c("Taschendiebstahl" , 3, ["FF", "FF", "TA"], 0, "Erklärung"),
+        new Talent_c("Verbergen"        , 3, ["FF", "FL", "FL"], 5, "Erklärung"),
+        new Talent_c("Reitverständnis"  , 3, ["WE", "FF", "TA"], 0, "Erklärung"),
+
+        /* Nature */
+        new Talent_c("Fährtensuche"  , 2, ["WE", "WE", "FL"], 0, "Erklärung"),
+        new Talent_c("Fixieren"      , 2, ["KR", "KR", "TA"], 5, "Erklärung"),
+        new Talent_c("Fischen"       , 1, ["WE", "IN", "GH"], 5, "Erklärung"),
+        new Talent_c("Orientierung"  , 3, ["WE", "IN", "IN"], 5, "Erklärung"),
+        new Talent_c("Überleben"     , 3, ["GH", "GH", "TA"], 0, "Erklärung"),
+        new Talent_c("Fallen stellen", 3, ["WE", "IN", "TA"], 0, "Erklärung"),
+        new Talent_c("Tiere Zähmen"  , 4, ["WE", "WE", "IN"], 0, "Erklärung"),
+
+        /* Knowledge */
+        new Talent_c("Medizin"        , 4, ["WE", "WE", "IN"], 0, "Erklärung"),
+        new Talent_c("Tiermedizin"    , 4, ["WE", "WE", "IN"], 0, "Erklärung"),
+        new Talent_c("Giftkunde"      , 4, ["WE", "WE", "WE"], 0, "Erklärung"),
+        new Talent_c("Psychologie"    , 4, ["WE", "WE", "IN"], 0, "Erklärung"),
+        new Talent_c("Jagdwissen"     , 4, ["WE", "WE", "TA"], 0, "Erklärung"),
+        new Talent_c("Pflanzenkunde"  , 4, ["WE", "WE", "IN"], 0, "Erklärung"),
+        new Talent_c("Tierkunde"      , 4, ["WE", "WE", "IN"], 0, "Erklärung"),
+        new Talent_c("Geographie"     , 4, ["WE", "WE", "IN"], 0, "Erklärung"),
+        new Talent_c("Historie"       , 4, ["WE", "WE", "WE"], 0, "Erklärung"),
+        new Talent_c("Religionswissen", 4, ["WE", "WE", "WE"], 0, "Erklärung"),
+        new Talent_c("Mechanik"       , 3, ["WE", "WE", "FF"], 0, "Erklärung"),
+        new Talent_c("Legenden"       , 4, ["WE", "WE", "CH"], 0, "Erklärung"),
+        new Talent_c("Astronomie"     , 4, ["WE", "WE", "IN"], 0, "Erklärung"),
+
+        /* Fighting */
+        new Talent_c("Turnierkampf"        , 3, ["  "], 5, "Erklärung"),
+        new Talent_c("Showkampf"           , 2, ["  "], 5, "Erklärung"),
+        new Talent_c("Kampf unter Wasser"  , 3, ["  "], 0, "Erklärung"),
+        new Talent_c("Gladiatorenkampf"    , 3, ["  "], 0, "Erklärung"),
+        new Talent_c("Kampf auf Fahrzeugen", 3, ["  "], 0, "Erklärung"),
+        new Talent_c("Kriegsmaschinerie"   , 4, ["  "], 0, "Erklärung"),
     ];
 }
