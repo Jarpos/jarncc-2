@@ -24,11 +24,11 @@ export class CCharEditorComponent implements OnInit {
         console.log(this.characterService._character);
     }
 
-    public increment(e: MouseEvent, i: any, param: string): void {
+    public increment(i: any, param: string, e: MouseEvent): void {
         i[param] += e.shiftKey ? 5 : 1;
     }
 
-    public decrement(e: MouseEvent, i: any, param: string): void {
+    public decrement(i: any, param: string, e: MouseEvent): void {
         i[param] -= e.shiftKey ? 5 : 1;
     }
 
