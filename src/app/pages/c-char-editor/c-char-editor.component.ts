@@ -25,14 +25,10 @@ export class CCharEditorComponent implements OnInit {
     }
 
     public increment(e: MouseEvent, i: any, param: string): void {
-        console.log(e);
-        console.log(i);
         i[param] += e.shiftKey ? 5 : 1;
     }
 
     public decrement(e: MouseEvent, i: any, param: string): void {
-        console.log(e);
-        console.log(i);
         i[param] -= e.shiftKey ? 5 : 1;
     }
 
