@@ -49,29 +49,17 @@
 <!-- Fighting/Weapon talents -->
 <table>
     <td>Name</td><td>Base</td><td>Cap</td><td>Xtra</td>
-    <tr>
-        <td>Ausweichen:</td>
-        <td>{{ character.dodgeBase }}</td>
-        <td>{{ character.dodgeCap }}</td>
-        <td>{{ character.extraDodge }}</td>
+    <tr *ngFor="let t of character._calcTalents">
+        <td title="{{ t.explanation }}">{{ t.name }}:</td>
+        <td>{{ t.basePoints }}</td>
+        <td>{{ t.capPoints }}</td>
+        <td>{{ t.extraPoints }}</td>
         <td>
-            <button (click)="character.extraDodge = character.extraDodge - 1">-</button>
-            <button (click)="character.extraDodge = character.extraDodge + 1">+</button>
+            <button (click)="t.extraPoints = t.extraPoints - 1">-</button>
+            <button (click)="t.extraPoints = t.extraPoints + 1">+</button>
         </td>
-        <td>= {{ character.dodge }}</td>
-        <td>Kosten: {{ character.costDodge }}</td>
-    </tr>
-    <tr>
-        <td>Parieren:</td>
-        <td>{{ character.parryBase }}</td>
-        <td>{{ character.parryCap }}</td>
-        <td>{{ character.extraParry }}</td>
-        <td>
-            <button (click)="character.extraParry = character.extraParry - 1">-</button>
-            <button (click)="character.extraParry = character.extraParry + 1">+</button>
-        </td>
-        <td>= {{ character.parry }}</td>
-        <td>Kosten: {{ character.costParry }}</td>
+        <td>= {{ t.allPoints }}</td>
+        <td>Kosten: {{ t.cost }}</td>
     </tr>
     <!-- TODO: Add Weapon Talents -->
 </table>
