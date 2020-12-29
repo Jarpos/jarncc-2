@@ -24,6 +24,18 @@ export class CCharEditorComponent implements OnInit {
         console.log(this.characterService._character);
     }
 
+    public increment(e: any, i: any, param: string): void {
+        console.log(e);
+        console.log(i);
+        i[param] += e.shiftKey ? 5 : 1;
+    }
+
+    public decrement(e: any, i: any, param: string): void {
+        console.log(e);
+        console.log(i);
+        i[param] -= e.shiftKey ? 5 : 1;
+    }
+
 
     // Does not work yet
     public textArea: string = "";

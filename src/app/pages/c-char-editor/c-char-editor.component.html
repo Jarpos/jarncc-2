@@ -55,8 +55,8 @@
         <td>{{ t.capPoints }}</td>
         <td>{{ t.extraPoints }}</td>
         <td>
-            <button (click)="t.extraPoints = t.extraPoints - 1">-</button>
-            <button (click)="t.extraPoints = t.extraPoints + 1">+</button>
+            <button (click)="decrement($event, t, 'extraPoints')">-</button>
+            <button (click)="increment($event, t, 'extraPoints')">+</button>
         </td>
         <td>= {{ t.allPoints }}</td>
         <td>Kosten: {{ t.cost }}</td>
@@ -82,8 +82,8 @@
             {{ b.value }}
         </td>
         <td>
-            <button (click)="b.value = b.value - 1">-</button>
-            <button (click)="b.value = b.value + 1">+</button>
+            <button (click)="decrement($event, b, 'value')">-</button>
+            <button (click)="increment($event, b, 'value')">+</button>
         </td>
     </tr>
 </table>
@@ -111,8 +111,8 @@
         <td>{{ t.difficulty }}</td>
         <td>{{ t.extraPoints }}</td>
         <td>
-            <button (click)="t.extraPoints = t.extraPoints - 1">-</button>
-            <button (click)="t.extraPoints = t.extraPoints + 1">+</button>
+            <button (click)="decrement($event, t, 'extraPoints')">-</button>
+            <button (click)="increment($event, t, 'extraPoints')">+</button>
         </td>
         <td>
             =
