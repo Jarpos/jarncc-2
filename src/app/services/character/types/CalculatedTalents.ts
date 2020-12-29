@@ -67,7 +67,7 @@ export class CalculatedTalents_c {
 
 
 export function get_calculated_talents(_this: Character_c): CalculatedTalents_c[] {
-    const weapon_talent =
+    const wtal = // Weapon talent
         (KR: number, GH: number, FL: number, FF: number) => {
             return new Factors_c(0.0, FL, FF, 0.0, GH, KR);
         };
@@ -81,23 +81,23 @@ export function get_calculated_talents(_this: Character_c): CalculatedTalents_c[
                                               _this, "Wie gut man parieren kann"),
 
         // One-handed-weapons
-        new CalculatedTalents_c("Hiebwaffen",   weapon_talent(1.0, 0.5, 1.5, 1.0),
+        new CalculatedTalents_c("Hiebwaffen",   wtal(1.0, 0.5, 1.5, 1.0),
                                                 null, _this, "Einhändige Hiebwaffe"),
-        new CalculatedTalents_c("Stichwaffen",  weapon_talent(1.0, 1.0, 1.5, 0.5),
+        new CalculatedTalents_c("Stichwaffen",  wtal(1.0, 1.0, 1.5, 0.5),
                                                 null, _this, "Einhändige Stichwaffe"),
-        new CalculatedTalents_c("Wurfwaffen",   weapon_talent(0.0, 1.0, 0.5, 1.5),
+        new CalculatedTalents_c("Wurfwaffen",   wtal(0.0, 1.0, 0.5, 1.5),
                                                 null, _this, "Einhändige Wurfwaffen"),
-        new CalculatedTalents_c("Kettenwaffen", weapon_talent(1.0, 1.0, 1.5, 0.5),
+        new CalculatedTalents_c("Kettenwaffen", wtal(1.0, 1.0, 1.5, 0.5),
                                                 null, _this, "Einhändige Kettenwaffen"),
 
         // Two-handed-weapons
-        new CalculatedTalents_c("Hiebwaffen",    weapon_talent(2.0, 1.0, 1.0, 0.5),
+        new CalculatedTalents_c("Hiebwaffen",    wtal(2.0, 1.0, 1.0, 0.5),
                                                  null, _this, "Zweihändige Hiebwaffen"),
-        new CalculatedTalents_c("Stangenwaffen", weapon_talent(2.0, 1.0, 1.0, 0.5),
+        new CalculatedTalents_c("Stangenwaffen", wtal(2.0, 1.0, 1.0, 0.5),
                                                  null, _this, "Zweihändige Stangenwaffen"),
-        new CalculatedTalents_c("Bogen",         weapon_talent(0.0, 1.0, 1.0, 1.5),
+        new CalculatedTalents_c("Bogen",         wtal(0.0, 1.0, 1.0, 1.5),
                                                  null, _this, "Zweihändiger Bogen"),
-        new CalculatedTalents_c("Armbrüste",     weapon_talent(1.0, 0.5, 1.0, 1.5),
+        new CalculatedTalents_c("Armbrüste",     wtal(1.0, 0.5, 1.0, 1.5),
                                                  null, _this, "Zweihändige Armbrust"),
     ];
 }
