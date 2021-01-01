@@ -21,7 +21,11 @@ export class BaseValue_c {
     private _value: number = 0;
     public get value(): number { return this._value; }
     public set value(v: number) {
-        if (v >= 0 && v <= 20) {
+        if (v <= 0) {
+            this._value = 0;
+        } else if (v >= 20) {
+            this._value = 20;
+        } else {
             this._value = v;
         }
     }
