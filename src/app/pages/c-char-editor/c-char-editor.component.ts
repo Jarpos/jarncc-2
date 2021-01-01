@@ -11,11 +11,11 @@ import { Character_c } from 'src/app/services/character/types/Character';
 export class CCharEditorComponent implements OnInit {
 
     public characterService: CharacterService;
-    public character;
+    public character: Character_c;
 
     constructor() {
         this.characterService = new CharacterService();
-        this.character = this.characterService._character
+        this.character = this.characterService._character;
     }
 
     ngOnInit(): void { }
