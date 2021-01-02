@@ -12,11 +12,7 @@ export class BaseValue_c {
 
     private _name: string = "";
     public get name(): string { return this._name; }
-    public set name(n: string) {
-        if (n.length <= 256) {
-            this._name = n;
-        }
-    }
+    public set name(n: string) { this._name = n; }
 
     private _value: number = 0;
     public get value(): number { return this._value; }
@@ -32,11 +28,7 @@ export class BaseValue_c {
 
     private _explanation: string = "";
     public get explanation(): string { return this._explanation; }
-    public set explanation(e: string) {
-        if (e.length <= 512) {
-            this._explanation = e;
-        }
-    }
+    public set explanation(e: string) { this._explanation = e; }
 }
 
 
