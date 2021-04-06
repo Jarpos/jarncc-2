@@ -33,11 +33,11 @@ export class Factors_c {
 export function calc_from_base(f: Factors_c, b: BaseValue_c[]): number {
     var map = get_base_values_index();
     return Math.floor(
-            f.TA * b[map.get("TA")!].value +
-            f.FL * b[map.get("FL")!].value +
-            f.FF * b[map.get("FF")!].value +
-            f.IN * b[map.get("IN")!].value +
-            f.GH * b[map.get("GH")!].value +
-            f.KR * b[map.get("KR")!].value
-        );
+        f.TA * b[map.get("TA")!].value +
+        f.FL * b[map.get("FL")!].value +
+        f.FF * b[map.get("FF")!].value +
+        f.IN * b[map.get("IN")!].value +
+        f.GH * b[map.get("GH")!].value +
+        f.KR * b[map.get("KR")!].value
+    );
 }
