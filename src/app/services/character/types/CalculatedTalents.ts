@@ -5,14 +5,11 @@ import { difficulties } from "./Talent";
 
 export class CalculatedTalents_c {
     /**
+     * Constructor for calculated talent
      * @param n name
-     * @param TA Tapferkeit
-     * @param FL Flinkheit
-     * @param FF Fingerfertigkeit
-     * @param IN Intuition
-     * @param GH Gesundheit
-     * @param KR Kraft
-     * @param _this reference to parent object
+     * @param base base value
+     * @param cap cap for value
+     * @param _this ref to the character
      * @param expl explanation string
      */
     constructor(n: string, base: Factors_c, cap: Factors_c | null, _this: Character_c, expl: string) {
