@@ -13,6 +13,13 @@ export class CCharEditorComponent implements OnInit {
     public characterService: CharacterService;
     public character: Character_c;
 
+    public SEC_SHOWN = [ // Is the section shown?
+        true, true, true, true, true, false
+    ];
+    public switch_sec(index: number) {
+        this.SEC_SHOWN[index] = !this.SEC_SHOWN[index];
+    }
+
     constructor() {
         this.characterService = new CharacterService();
         this.character = this.characterService._character;
