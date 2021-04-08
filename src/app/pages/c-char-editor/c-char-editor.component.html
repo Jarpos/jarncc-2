@@ -1,5 +1,5 @@
 <!-- Choose proficency -->
-<button (click)="switch_sec(0)">{{ SEC_SHOWN[0] ? "Disable" : "Enable" }}</button>
+<button (click)="switch_sec(0)">{{ SEC_SHOWN[0] ? "Hide" : "Show" }}</button>
 <table *ngIf="SEC_SHOWN[0]">
     <tr>
         <td>Erfahrungsgrad:</td>
@@ -25,7 +25,7 @@
 <br>
 
 <!-- General Information (Name, Age, etc.) -->
-<button (click)="switch_sec(1)">{{ SEC_SHOWN[1] ? "Disable" : "Enable" }}</button>
+<button (click)="switch_sec(1)">{{ SEC_SHOWN[1] ? "Hide" : "Show" }}</button>
 <table *ngIf="SEC_SHOWN[1]">
     <tr *ngFor="let i of character._information">
         <td title="{{ i.explanation }}">{{ i.name }}:</td>
@@ -35,7 +35,7 @@
 <br>
 
 <!-- Calculated  -->
-<button (click)="switch_sec(2)">{{ SEC_SHOWN[2] ? "Disable" : "Enable" }}</button>
+<button (click)="switch_sec(2)">{{ SEC_SHOWN[2] ? "Hide" : "Show" }}</button>
 <table *ngIf="SEC_SHOWN[2]">
     <tr>
         <td>Trefferpunkte:</td>
@@ -50,7 +50,7 @@
 <br>
 
 <!-- Base Values (Strength, Dexterity, etc.) -->
-<button (click)="switch_sec(3)">{{ SEC_SHOWN[3] ? "Disable" : "Enable" }}</button>
+<button (click)="switch_sec(3)">{{ SEC_SHOWN[3] ? "Hide" : "Show" }}</button>
 <table *ngIf="SEC_SHOWN[3]">
     <tr>
         <td>Basis Punkte:</td>
@@ -75,7 +75,7 @@
 <br>
 
 <!-- Fighting/Weapon talents -->
-<button (click)="switch_sec(4)">{{ SEC_SHOWN[4] ? "Disable" : "Enable" }}</button>
+<button (click)="switch_sec(4)">{{ SEC_SHOWN[4] ? "Hide" : "Show" }}</button>
 <table *ngIf="SEC_SHOWN[4]">
     <td>Name</td><td>Base</td><td>Cap</td><td>Xtra</td>
     <tr *ngFor="let t of character._calcTalents">
@@ -94,7 +94,7 @@
 <br>
 
 <!-- Talents (Perception, Pickpocketing, etc.) -->
-<button (click)="switch_sec(5)">{{ SEC_SHOWN[5] ? "Disable" : "Enable" }}</button>
+<button (click)="switch_sec(5)">{{ SEC_SHOWN[5] ? "Hide" : "Show" }}</button>
 <table *ngIf="SEC_SHOWN[5]">
     <tr>
         <td>Ausgleichspunkte:</td>
