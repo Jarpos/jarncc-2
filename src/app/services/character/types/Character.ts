@@ -22,6 +22,13 @@ export class Character_c {
         weapons: Array<Weapon>(),
     };
 
+    public get leftoverMoney(): number {
+        let s = this._inventory.finance.money;
+        this._inventory.items.forEach(val => s -= val.cost);
+        this._inventory.weapons.forEach(val => s -= val.cost);
+        return s;
+    }
+
     public get basePointsSum(): number {
         let s = 0;
         this._baseValues.forEach(val => s += val.value);
