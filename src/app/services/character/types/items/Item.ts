@@ -1,9 +1,9 @@
-import { BaseItem } from "./BaseItem";
+import { BaseItem_c } from "./BaseItem";
 
 enum ItemType {
 }
 
-export class Item extends BaseItem {
+export class Item_c extends BaseItem_c {
     public type: ItemType;
 
     constructor(name: string, cost: number, type: ItemType, expl: string) {

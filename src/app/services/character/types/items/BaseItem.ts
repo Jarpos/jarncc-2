@@ -1,4 +1,4 @@
-export class BaseItem {
+export class BaseItem_c {
     public name: string;
     public cost: number;
     public expl: string;

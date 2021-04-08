@@ -1,4 +1,4 @@
-import { BaseItem } from "./BaseItem";
+import { BaseItem_c } from "./BaseItem";
 
 export enum WeaponType {
     EH_Stich = "Einhand Stich",
@@ -12,7 +12,7 @@ export enum WeaponType {
     ZH_Armbrust = "Zweihand Armbrust",
 }
 
-export class Weapon extends BaseItem {
+export class Weapon_c extends BaseItem_c {
     public type: WeaponType;
 
     constructor(name: string, cost: number, type: WeaponType, expl: string) {
