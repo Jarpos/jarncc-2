@@ -5,6 +5,9 @@ import { Proficency_c } from "./Proficency";
 import { Origin_c } from "./Origins";
 import { calc_from_base, Factors_c } from "./CalculateFromBase";
 import { CalculatedTalents_c, get_calculated_talents } from "./CalculatedTalents";
+import { Weapon } from "./items/Weapon";
+import { Item } from "./items/Item";
+import { Finance_c } from "./Finances";
 
 export class Character_c {
     constructor() { }
@@ -13,6 +16,11 @@ export class Character_c {
     public _baseValues: BaseValue_c[] = get_base_values();
     public _talents: Talent_c[] = get_talents();
     public _calcTalents: CalculatedTalents_c[] = get_calculated_talents(this);
+    public _inventory = {
+        finance: new Finance_c("", 0),
+        items: Array<Item>(),
+        weapons: Array<Weapon>(),
+    };
 
     public get basePointsSum(): number {
         let s = 0;

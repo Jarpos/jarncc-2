@@ -21,6 +21,16 @@
             </select>
         </td>
     </tr>
+    <tr>
+        <td>Finanzkraft:</td>
+        <td>
+            <select [(ngModel)]="character._inventory.finance">
+                <option *ngFor="let o of characterService._finances"
+                        [ngValue]="o">{{ o.label + ' z.B. ' + o.example }}
+                </option>
+            </select>
+        </td>
+    </tr>
 </table>
 <br>
 
