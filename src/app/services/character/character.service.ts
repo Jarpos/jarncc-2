@@ -7,6 +7,7 @@ import { Character_c } from './types/Character';
 import { get_proficencies } from './types/Proficency';
 import { get_origins } from './types/Origins';
 import { get_finances } from './types/Finances';
+import { get_items } from './types/items/Items';
 
 @Injectable({
     providedIn: 'root'
@@ -18,6 +19,8 @@ export class CharacterService {
     public _proficencies = get_proficencies();
     public _origins = get_origins();
     public _finances = get_finances();
+
+    public _items = get_items();
 
     constructor() { }
 

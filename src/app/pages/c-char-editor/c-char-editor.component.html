@@ -143,6 +143,17 @@
 </table>
 <br>
 
+<button (click)="switch_sec(6)">{{ SEC_SHOWN[6] ? "Hide" : "Show" }}</button>
+<table *ngIf="SEC_SHOWN[6]">
+    <tr>
+        <td>Name</td><td>Kosten</td>
+    </tr>
+    <tr *ngFor="let i of characterService._items">
+        <td>{{ i.name }}</td>
+        <td>{{ i.cost }}</td>
+    </tr>
+</table>
+<br>
 
 <br><br>
 <button (click)="log()">Print Char</button>

@@ -51,7 +51,7 @@ export function get_items(): Item_c[] {
         getFood("Tagesration einfach",  1),
         getFood("Tagesration luxuriös", 3),
 
-        getTent("Tent 1 Person", 5),
+        getTent("Zelt 1 Person", 5),
         // ...
 
         getBackpack("Rucksack klein",   2),

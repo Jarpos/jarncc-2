@@ -14,7 +14,7 @@ export class CCharEditorComponent implements OnInit {
     public character: Character_c;
 
     public SEC_SHOWN = [ // Is the section shown?
-        true, true, true, true, false, false,
+        true, true, true, true, false, false, false,
     ];
     public switch_sec(index: number) {
         this.SEC_SHOWN[index] = !this.SEC_SHOWN[index];
