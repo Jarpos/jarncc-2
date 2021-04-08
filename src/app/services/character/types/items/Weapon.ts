@@ -15,7 +15,7 @@ export enum WeaponType {
 export class Weapon_c extends BaseItem_c {
     public type: WeaponType;
 
-    constructor(name: string, cost: number, type: WeaponType, expl: string) {
+    constructor(name: string, cost: number, type: WeaponType, expl?: string) {
         super(name, cost, expl);
         this.type = type;
     }
