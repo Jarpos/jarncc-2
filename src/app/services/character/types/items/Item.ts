@@ -1,9 +1,9 @@
 import { BaseItem_c } from "./BaseItem";
 
-enum ItemType {
+export enum ItemType {
     Apparel        = "Kleidung",
     Animal         = "Tierbegleiter",
-    AnimalExtras   = "Tierzubehör",
+    AnimalExtra    = "Tierzubehör",
     // ArmorServices = "Rüstung ausbeulen",
     Messenger      = "Bote pro Tag",
     // WeaponServices = "Klingen schärfen",
