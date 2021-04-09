@@ -1,159 +1,165 @@
-<!-- Choose proficency -->
-<button (click)="switch_sec(0)">{{ SEC_SHOWN[0] ? "Hide" : "Show" }}</button>
-<table *ngIf="SEC_SHOWN[0]">
-    <tr>
-        <td>Erfahrungsgrad:</td>
-        <td>
-            <select [(ngModel)]="character._proficency">
-                <option *ngFor="let p of characterService._proficencies"
-                        [ngValue]="p">{{ p.label }}
-                </option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td>Herkunft:</td>
-        <td>
-            <select [(ngModel)]="character._origin">
-                <option *ngFor="let o of characterService._origins"
-                        [ngValue]="o">{{ o.label }}
-                </option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td>Finanzkraft:</td>
-        <td>
-            <select [(ngModel)]="character._inventory.finance">
-                <option *ngFor="let o of characterService._finances"
-                        [ngValue]="o">{{ o.label + ' z.B. ' + o.example }}
-                </option>
-            </select>
-        </td>
-    </tr>
-</table>
-<br>
+<div class="row">
+    <div class="column">
+        <!-- Choose proficency -->
+        <button (click)="switch_sec(0)">{{ SEC_SHOWN[0] ? "Hide" : "Show" }}</button>
+        <table *ngIf="SEC_SHOWN[0]">
+            <tr>
+                <td>Erfahrungsgrad:</td>
+                <td>
+                    <select [(ngModel)]="character._proficency">
+                        <option *ngFor="let p of characterService._proficencies"
+                                [ngValue]="p">{{ p.label }}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Herkunft:</td>
+                <td>
+                    <select [(ngModel)]="character._origin">
+                        <option *ngFor="let o of characterService._origins"
+                                [ngValue]="o">{{ o.label }}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Finanzkraft:</td>
+                <td>
+                    <select [(ngModel)]="character._inventory.finance">
+                        <option *ngFor="let o of characterService._finances"
+                                [ngValue]="o">{{ o.label + ' z.B. ' + o.example }}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br>
 
-<!-- General Information (Name, Age, etc.) -->
-<button (click)="switch_sec(1)">{{ SEC_SHOWN[1] ? "Hide" : "Show" }}</button>
-<table *ngIf="SEC_SHOWN[1]">
-    <tr *ngFor="let i of character._information">
-        <td title="{{ i.explanation }}">{{ i.name }}:</td>
-        <td><input [(ngModel)]="i.value"></td>
-    </tr>
-</table>
-<br>
+        <!-- General Information (Name, Age, etc.) -->
+        <button (click)="switch_sec(1)">{{ SEC_SHOWN[1] ? "Hide" : "Show" }}</button>
+        <table *ngIf="SEC_SHOWN[1]">
+            <tr *ngFor="let i of character._information">
+                <td title="{{ i.explanation }}">{{ i.name }}:</td>
+                <td><input [(ngModel)]="i.value"></td>
+            </tr>
+        </table>
+        <br>
 
-<!-- Calculated  -->
-<button (click)="switch_sec(2)">{{ SEC_SHOWN[2] ? "Hide" : "Show" }}</button>
-<table *ngIf="SEC_SHOWN[2]">
-    <tr>
-        <td>Trefferpunkte:</td>
-        <td>{{ character.health }}</td>
-    </tr>
-    <tr>
-        <td>Initiative:</td>
-        <td>{{ character.initiative }}</td>
-        <td>{{ character.initiative_level }}</td>
-    </tr>
-</table>
-<br>
+        <!-- Calculated  -->
+        <button (click)="switch_sec(2)">{{ SEC_SHOWN[2] ? "Hide" : "Show" }}</button>
+        <table *ngIf="SEC_SHOWN[2]">
+            <tr>
+                <td>Trefferpunkte:</td>
+                <td>{{ character.health }}</td>
+            </tr>
+            <tr>
+                <td>Initiative:</td>
+                <td>{{ character.initiative }}</td>
+                <td>{{ character.initiative_level }}</td>
+            </tr>
+        </table>
+        <br>
 
-<!-- Base Values (Strength, Dexterity, etc.) -->
-<button (click)="switch_sec(3)">{{ SEC_SHOWN[3] ? "Hide" : "Show" }}</button>
-<table *ngIf="SEC_SHOWN[3]">
-    <tr>
-        <td>Basis Punkte:</td>
-        <td [ngStyle]="{ color:
-            character.basePointsSum <= character.basePoints ? 'green' : 'red' }">
-            {{ character.basePointsSum }}/{{ character.basePoints }}
-        </td>
-        <td>({{ character.maxBasePoints }})</td>
-    </tr>
-    <tr *ngFor="let b of character._baseValues">
-        <td title="{{ b.explanation }}">{{ b.name }}:</td>
-        <td [ngStyle]="{ color:
-            b.value <= character.maxBasePoints ? '' : 'red' }">
-            {{ b.value }}
-        </td>
-        <td>
-            <button (click)="decrement(b, 'value', $event)">-</button>
-            <button (click)="increment(b, 'value', $event)">+</button>
-        </td>
-    </tr>
-</table>
-<br>
+        <!-- Base Values (Strength, Dexterity, etc.) -->
+        <button (click)="switch_sec(3)">{{ SEC_SHOWN[3] ? "Hide" : "Show" }}</button>
+        <table *ngIf="SEC_SHOWN[3]">
+            <tr>
+                <td>Basis Punkte:</td>
+                <td [ngStyle]="{ color:
+                    character.basePointsSum <= character.basePoints ? 'green' : 'red' }">
+                    {{ character.basePointsSum }}/{{ character.basePoints }}
+                </td>
+                <td>({{ character.maxBasePoints }})</td>
+            </tr>
+            <tr *ngFor="let b of character._baseValues">
+                <td title="{{ b.explanation }}">{{ b.name }}:</td>
+                <td [ngStyle]="{ color:
+                    b.value <= character.maxBasePoints ? '' : 'red' }">
+                    {{ b.value }}
+                </td>
+                <td>
+                    <button (click)="decrement(b, 'value', $event)">-</button>
+                    <button (click)="increment(b, 'value', $event)">+</button>
+                </td>
+            </tr>
+        </table>
+        <br>
+    </div>
 
-<!-- Fighting/Weapon talents -->
-<button (click)="switch_sec(4)">{{ SEC_SHOWN[4] ? "Hide" : "Show" }}</button>
-<table *ngIf="SEC_SHOWN[4]">
-    <td>Name</td><td>Base</td><td>Cap</td><td>Xtra</td>
-    <tr *ngFor="let t of character._calcTalents">
-        <td title="{{ t.explanation }}">{{ t.name }}:</td>
-        <td>{{ t.basePoints }}</td>
-        <td>{{ t.capPoints }}</td>
-        <td>{{ t.extraPoints }}</td>
-        <td>
-            <button (click)="decrement(t, 'extraPoints', $event)">-</button>
-            <button (click)="increment(t, 'extraPoints', $event)">+</button>
-        </td>
-        <td>= {{ t.allPoints }}</td>
-        <td>Kosten: {{ t.cost }}</td>
-    </tr>
-</table>
-<br>
+    <div class="column">
+        <!-- Fighting/Weapon talents -->
+        <button (click)="switch_sec(4)">{{ SEC_SHOWN[4] ? "Hide" : "Show" }}</button>
+        <table *ngIf="SEC_SHOWN[4]">
+            <td>Name</td><td>Base</td><td>Cap</td><td>Xtra</td>
+            <tr *ngFor="let t of character._calcTalents">
+                <td title="{{ t.explanation }}">{{ t.name }}:</td>
+                <td>{{ t.basePoints }}</td>
+                <td>{{ t.capPoints }}</td>
+                <td>{{ t.extraPoints }}</td>
+                <td>
+                    <button (click)="decrement(t, 'extraPoints', $event)">-</button>
+                    <button (click)="increment(t, 'extraPoints', $event)">+</button>
+                </td>
+                <td>= {{ t.allPoints }}</td>
+                <td>Kosten: {{ t.cost }}</td>
+            </tr>
+        </table>
+        <br>
 
-<!-- Talents (Perception, Pickpocketing, etc.) -->
-<button (click)="switch_sec(5)">{{ SEC_SHOWN[5] ? "Hide" : "Show" }}</button>
-<table *ngIf="SEC_SHOWN[5]">
-    <tr>
-        <td>Ausgleichspunkte:</td>
-        <td [ngStyle]="{ color:
-            character.talentPointsCostSum <= character.talentPoints ? 'green' : 'red' }">
-            {{ character.talentPointsCostSum }}/{{ character.talentPoints }}
-        </td>
-        <!-- Space out the max value for
-                    talents to align it better -->
-        <td></td><td></td><td></td><td></td>
-        <td>({{ character.maxTalentPoints }})</td>
-    </tr>
-    <tr *ngFor="let t of character._talents">
-        <td title="{{ t.explanation }}">{{ t.name }}:</td>
-        <td>
-            <a *ngFor="let attr of t.attributes">
-                {{ attr }}
-            </a>
-        </td>
-        <td>{{ t.basePoints }}</td>
-        <td>{{ t.difficulty }}</td>
-        <td>{{ t.extraPoints }}</td>
-        <td>
-            <button (click)="decrement(t, 'extraPoints', $event)">-</button>
-            <button (click)="increment(t, 'extraPoints', $event)">+</button>
-        </td>
-        <td>
-            =
-            <span [ngStyle]="{ color:
-                    t.allPoints <= character.maxTalentPoints ? '' : 'red' }">
-                {{ t.allPoints }}
-            </span>
-        </td>
-        <td>Kosten: {{ t.cost }}</td>
-    </tr>
-</table>
-<br>
+        <!-- Talents (Perception, Pickpocketing, etc.) -->
+        <button (click)="switch_sec(5)">{{ SEC_SHOWN[5] ? "Hide" : "Show" }}</button>
+        <table *ngIf="SEC_SHOWN[5]">
+            <tr>
+                <td>Ausgleichspunkte:</td>
+                <td [ngStyle]="{ color:
+                    character.talentPointsCostSum <= character.talentPoints ? 'green' : 'red' }">
+                    {{ character.talentPointsCostSum }}/{{ character.talentPoints }}
+                </td>
+                <!-- Space out the max value for
+                            talents to align it better -->
+                <td></td><td></td><td></td><td></td>
+                <td>({{ character.maxTalentPoints }})</td>
+            </tr>
+            <tr *ngFor="let t of character._talents">
+                <td title="{{ t.explanation }}">{{ t.name }}:</td>
+                <td>
+                    <a *ngFor="let attr of t.attributes">
+                        {{ attr }}
+                    </a>
+                </td>
+                <td>{{ t.basePoints }}</td>
+                <td>{{ t.difficulty }}</td>
+                <td>{{ t.extraPoints }}</td>
+                <td>
+                    <button (click)="decrement(t, 'extraPoints', $event)">-</button>
+                    <button (click)="increment(t, 'extraPoints', $event)">+</button>
+                </td>
+                <td>
+                    =
+                    <span [ngStyle]="{ color:
+                            t.allPoints <= character.maxTalentPoints ? '' : 'red' }">
+                        {{ t.allPoints }}
+                    </span>
+                </td>
+                <td>Kosten: {{ t.cost }}</td>
+            </tr>
+        </table>
+        <br>
 
-<button (click)="switch_sec(6)">{{ SEC_SHOWN[6] ? "Hide" : "Show" }}</button>
-<table *ngIf="SEC_SHOWN[6]">
-    <tr>
-        <td>Name</td><td>Kosten</td>
-    </tr>
-    <tr *ngFor="let i of characterService._items">
-        <td>{{ i.name }}</td>
-        <td>{{ i.cost }}</td>
-    </tr>
-</table>
-<br>
+        <button (click)="switch_sec(6)">{{ SEC_SHOWN[6] ? "Hide" : "Show" }}</button>
+        <table *ngIf="SEC_SHOWN[6]">
+            <tr>
+                <td>Name</td><td>Kosten</td>
+            </tr>
+            <tr *ngFor="let i of characterService._items">
+                <td>{{ i.name }}</td>
+                <td>{{ i.cost }}</td>
+            </tr>
+        </table>
+        <br>
+    </div>
+</div>
 
 <br><br>
 <button (click)="log()">Print Char</button>
